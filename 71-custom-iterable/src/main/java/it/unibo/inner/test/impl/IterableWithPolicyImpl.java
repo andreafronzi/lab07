@@ -51,26 +51,23 @@ public class IterableWithPolicyImpl<T>  implements IterableWithPolicy<T>{
 
         @Override
         public boolean hasNext() {
-            if(this.index < IterableWithPolicyImpl.this.array.length){
-                return true;
+            while(this.index < array.length){
+                final T elem = array[index];
+                if(predicate.test(elem)){
+                    return true;
+                }
+                this.index++;
             }
             return false;
         }
 
         @Override
         public T next() {
-            while(!predicate.test(IterableWithPolicyImpl.this.array[this.index]) && this.hasNext());{
-                index++;
-            }
-            return IterableWithPolicyImpl.this.array[index++];  
-
-
-            /*
             if(this.hasNext()){
                 return IterableWithPolicyImpl.this.array[index++];
             }else{
                 throw new NoSuchElementException();
-            }*/
+            }
         }
 
         @Override
