@@ -11,6 +11,7 @@ tramite una classe anonima.
 Si osservi `TestFunctionalLibrary` per trovare esempi di classi anonime che implementano function.
 Ci si prepari a rispondere alla seguente domanda al momento della correzione:
 > perché `identity()` è un metodo, e non una costante `public static`?
+perchè non è possibile creare degli oggetti di tipo generico visto che non si conoscono a priori gli argomenti del costruttore della classe anonima
 
 ## Parte 2: sfruttare le classi anonime per costruire una libreria funzionale
 
